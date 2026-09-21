@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="txT txD">
 <title id="txT">Transaction lifecycle and MVCC versions</title>
-<desc id="txD">A transaction moves from active to committed or aborted; committed data becomes durable. MVCC row versions resolve by snapshot visibility. One signal follows the commit transition.</desc>
+<desc id="txD">A transaction moves from active to committed or aborted; committed data becomes durable. The MVCC row-version chain resolves by snapshot visibility. One signal follows the commit transition.</desc>
 <style>
 .bg{fill:#F7F8F8}
 .panel{fill:#EEF1F2}
@@ -60,27 +60,27 @@
 <animateMotion dur="1.6s" begin="0.6s" fill="freeze" path="M235 156 L235 186 L160 186 L160 212"/>
 <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.85;1" dur="1.6s" begin="0.6s" fill="freeze"/>
 </rect>
-<!-- MVCC versions -->
-<text x="470" y="88" font-size="10" letter-spacing="2" class="mono muted">MVCC VERSIONS</text>
+<!-- MVCC version chain (newest first) -->
+<text x="470" y="88" font-size="10" letter-spacing="2" class="mono muted">MVCC VERSION CHAIN</text>
 <g>
 <rect x="470" y="104" width="362" height="34" class="panel"/>
-<rect x="470" y="104" width="3" height="34" class="faint"/>
-<text x="486" y="126" font-size="10" class="mono ink">v1 · committed</text>
-<text x="820" y="126" font-size="9" text-anchor="end" class="mono faint">prior</text>
+<rect x="470" y="104" width="3" height="34" class="amber"/>
+<text x="486" y="126" font-size="10" class="mono ink">v3 · uncommitted</text>
+<text x="820" y="126" font-size="9" text-anchor="end" class="mono amber">transaction-local</text>
 </g>
 <g>
 <rect x="470" y="150" width="362" height="34" class="panel"/>
 <rect x="470" y="150" width="3" height="34" class="blue"/>
-<text x="486" y="172" font-size="10" class="mono ink">v2 · committed</text>
-<text x="820" y="172" font-size="9" text-anchor="end" class="mono blue">current</text>
+<text x="486" y="172" font-size="10" class="mono ink">v2 · live</text>
+<text x="820" y="172" font-size="9" text-anchor="end" class="mono blue">visible per snapshot</text>
 </g>
 <g>
 <rect x="470" y="196" width="362" height="34" class="panel"/>
-<rect x="470" y="196" width="3" height="34" class="amber"/>
-<text x="486" y="218" font-size="10" class="mono ink">v3 · uncommitted</text>
-<text x="820" y="218" font-size="9" text-anchor="end" class="mono amber">local</text>
+<rect x="470" y="196" width="3" height="34" class="red"/>
+<text x="486" y="218" font-size="10" class="mono ink">v1 · deleted</text>
+<text x="820" y="218" font-size="9" text-anchor="end" class="mono faint">delete tombstone</text>
 </g>
-<text x="470" y="256" font-size="9" class="mono faint">row versions resolve per snapshot</text>
-<text x="470" y="270" font-size="9" class="mono faint">committed data becomes durable</text>
+<text x="470" y="252" font-size="9" class="mono faint">newest first — one chain per row, resolved per snapshot</text>
+<text x="470" y="266" font-size="9" class="mono faint">Live · Deleted · Uncommitted · Invisible</text>
 <text x="440" y="410" text-anchor="middle" font-size="10" class="faint">transaction lifecycle — one active transition, resolved by snapshot visibility</text>
 </svg>

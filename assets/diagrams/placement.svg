@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="880" height="360" viewBox="0 0 880 360" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="plT plD">
 <title id="plT">Data placement control plane</title>
-<desc id="plD">A vertical control plane for data placement: location, residency, replication, access, storage, and jurisdiction. One signal descends the plane once.</desc>
+<desc id="plD">A vertical control plane for physical data placement: logical object, segment, pack, device, allocation, and persistence. One signal descends the plane once.</desc>
 <style>
 .bg{fill:#F7F8F8}
 .panel{fill:#EEF1F2}
@@ -53,26 +53,26 @@
 <rect x="150" y="282" width="430" height="30"/>
 </g>
 <g font-size="11" font-weight="600" letter-spacing="1.5" class="ink">
-<text x="166" y="112">LOCATION</text>
-<text x="166" y="150">RESIDENCY</text>
-<text x="166" y="188">REPLICATION</text>
-<text x="166" y="226">ACCESS</text>
-<text x="166" y="264">STORAGE</text>
-<text x="166" y="302">JURISDICTION</text>
+<text x="166" y="112">LOGICAL OBJECT</text>
+<text x="166" y="150">SEGMENT</text>
+<text x="166" y="188">PACK</text>
+<text x="166" y="226">DEVICE</text>
+<text x="166" y="264">ALLOCATION</text>
+<text x="166" y="302">PERSISTENCE</text>
 </g>
 <rect x="150" y="92" width="3" height="30" class="violet"/>
-<rect x="150" y="130" width="3" height="30" class="violet"/>
-<rect x="150" y="168" width="3" height="30" class="amber"/>
-<rect x="150" y="206" width="3" height="30" class="blue"/>
-<rect x="150" y="244" width="3" height="30" class="green"/>
-<rect x="150" y="282" width="3" height="30" class="violet"/>
+<rect x="150" y="130" width="3" height="30" class="blue"/>
+<rect x="150" y="168" width="3" height="30" class="blue"/>
+<rect x="150" y="206" width="3" height="30" class="green"/>
+<rect x="150" y="244" width="3" height="30" class="amber"/>
+<rect x="150" y="282" width="3" height="30" class="green"/>
 <g font-size="9" class="mono faint">
-<text x="596" y="112">region · zone</text>
-<text x="596" y="150">data boundary</text>
-<text x="596" y="188">replica set</text>
-<text x="596" y="226">access path</text>
-<text x="596" y="264">durable store</text>
-<text x="596" y="302">placement domain</text>
+<text x="596" y="112">table · index</text>
+<text x="596" y="150">B+tree · single owner</text>
+<text x="596" y="188">device container</text>
+<text x="596" y="226">registered store</text>
+<text x="596" y="264">chosen per segment</text>
+<text x="596" y="302">durable bytes</text>
 </g>
 <!-- one signal descends the control plane once. -->
 <line class="motion" x1="120" y1="92" x2="120" y2="126" stroke="#0A7EA4" stroke-width="2" opacity="0">
@@ -80,5 +80,5 @@
 <animate attributeName="y2" values="126;312" dur="2.4s" begin="0.5s" fill="freeze"/>
 <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.06;0.9;1" dur="2.4s" begin="0.5s" fill="freeze"/>
 </line>
-<text x="440" y="344" text-anchor="middle" font-size="10" class="faint">infrastructure placement — where data lives, is copied, and is reached</text>
+<text x="440" y="344" text-anchor="middle" font-size="10" class="faint">infrastructure placement — logical objects stay independent of where their bytes live</text>
 </svg>

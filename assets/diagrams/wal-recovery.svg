@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="wrT wrD">
+<title id="wrT">Write-ahead log and recovery</title>
+<desc id="wrD">On the write path, a change appends a WAL record, is made durable through fsync, and only then is applied to buffered data pages and persistence. On recovery, the engine restarts from the last checkpoint and replays committed WAL records to reach consistent B+tree state. One brief accent descends the write path, then the diagram is static.</desc>
+<style>
+.bg{fill:#F7F8F8}
+.panel{fill:#EEF1F2}
+.ink{fill:#16181B}
+.muted{fill:#5A616B}
+.faint{fill:#8A9099}
+.line{stroke:#9AA1AB}
+.rule{stroke:#DCE0E4}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.blue{fill:#0A7EA4}
+.green{fill:#3FAE78}
+.amber{fill:#C58A32}
+.violet{fill:#7567A8}
+.motion{}
+@media (prefers-color-scheme: dark){
+.bg{fill:#0D1113}
+.panel{fill:#15181B}
+.ink{fill:#E7E9EB}
+.muted{fill:#98A1AB}
+.faint{fill:#6E747C}
+.line{stroke:#3A4046}
+.rule{stroke:#212629}
+.blue{fill:#2E9BC0}
+.green{fill:#4FBE88}
+.amber{fill:#D69A42}
+.violet{fill:#8B7DBE}
+}
+@media (prefers-reduced-motion: reduce){.motion{display:none}}
+</style>
+<rect width="880" height="400" class="bg"/>
+<text x="48" y="44" font-size="11" letter-spacing="3.5" class="muted">WAL · RECOVERY</text>
+<text x="832" y="44" font-size="10" text-anchor="end" class="mono faint">committed-only replay</text>
+<line x1="48" y1="58" x2="832" y2="58" class="rule"/>
+<line x1="440" y1="80" x2="440" y2="330" class="rule" stroke-dasharray="3 5"/>
+<!-- write path -->
+<text x="60" y="84" font-size="10" letter-spacing="2" class="mono muted">WRITE PATH</text>
+<line x1="44" y1="98" x2="44" y2="326" class="rule" stroke-dasharray="3 5"/>
+<g class="panel">
+<rect x="60" y="98" width="340" height="36" rx="3"/>
+<rect x="60" y="146" width="340" height="36" rx="3"/>
+<rect x="60" y="194" width="340" height="36" rx="3"/>
+<rect x="60" y="242" width="340" height="36" rx="3"/>
+<rect x="60" y="290" width="340" height="36" rx="3"/>
+</g>
+<g fill="none" class="line">
+<rect x="60" y="98" width="340" height="36" rx="3"/>
+<rect x="60" y="146" width="340" height="36" rx="3"/>
+<rect x="60" y="194" width="340" height="36" rx="3"/>
+<rect x="60" y="242" width="340" height="36" rx="3"/>
+<rect x="60" y="290" width="340" height="36" rx="3"/>
+</g>
+<rect x="60" y="98" width="3" height="36" class="blue"/>
+<rect x="60" y="146" width="3" height="36" class="blue"/>
+<rect x="60" y="194" width="3" height="36" class="green"/>
+<rect x="60" y="242" width="3" height="36" class="blue"/>
+<rect x="60" y="290" width="3" height="36" class="green"/>
+<g font-size="11.5" font-weight="600" letter-spacing="1" class="ink">
+<text x="76" y="121">WRITE</text>
+<text x="76" y="169">WAL · APPEND</text>
+<text x="76" y="217">FSYNC</text>
+<text x="76" y="265">BUFFER · PAGE · BLOCK</text>
+<text x="76" y="313">PERSISTENCE</text>
+</g>
+<g font-size="9" text-anchor="end" class="mono faint">
+<text x="388" y="121">statement · row change</text>
+<text x="388" y="169">record + CRC32C</text>
+<text x="388" y="217">durable · group commit</text>
+<text x="388" y="265">apply to data pages</text>
+<text x="388" y="313">durable state</text>
+</g>
+<g fill="none" class="line" stroke-width="1.5">
+<line x1="230" y1="134" x2="230" y2="146"/>
+<line x1="230" y1="182" x2="230" y2="194"/>
+<line x1="230" y1="230" x2="230" y2="242"/>
+<line x1="230" y1="278" x2="230" y2="290"/>
+</g>
+<!-- recovery -->
+<text x="480" y="84" font-size="10" letter-spacing="2" class="mono muted">RECOVERY</text>
+<g class="panel">
+<rect x="480" y="98" width="340" height="36" rx="3"/>
+<rect x="480" y="146" width="340" height="36" rx="3"/>
+<rect x="480" y="194" width="340" height="36" rx="3"/>
+<rect x="480" y="242" width="340" height="36" rx="3"/>
+</g>
+<g fill="none" class="line">
+<rect x="480" y="98" width="340" height="36" rx="3"/>
+<rect x="480" y="146" width="340" height="36" rx="3"/>
+<rect x="480" y="194" width="340" height="36" rx="3"/>
+<rect x="480" y="242" width="340" height="36" rx="3"/>
+</g>
+<rect x="480" y="98" width="3" height="36" class="faint"/>
+<rect x="480" y="146" width="3" height="36" class="violet"/>
+<rect x="480" y="194" width="3" height="36" class="amber"/>
+<rect x="480" y="242" width="3" height="36" class="green"/>
+<g font-size="11.5" font-weight="600" letter-spacing="1" class="ink">
+<text x="496" y="121">RESTART</text>
+<text x="496" y="169">CHECKPOINT</text>
+<text x="496" y="217">WAL REPLAY</text>
+<text x="496" y="265">CONSISTENT STATE</text>
+</g>
+<g font-size="9" text-anchor="end" class="mono faint">
+<text x="808" y="121">process start</text>
+<text x="808" y="169">last durable LSN</text>
+<text x="808" y="217">committed records</text>
+<text x="808" y="265">recovered B+tree</text>
+</g>
+<g fill="none" class="line" stroke-width="1.5">
+<line x1="650" y1="134" x2="650" y2="146"/>
+<line x1="650" y1="182" x2="650" y2="194"/>
+<line x1="650" y1="230" x2="650" y2="242"/>
+</g>
+<text x="650" y="300" text-anchor="middle" font-size="9" class="mono faint">records without a commit marker are not replayed</text>
+<!-- one brief accent descends the write path, then the diagram is static. -->
+<line class="motion" x1="44" y1="98" x2="44" y2="128" stroke="#0A7EA4" stroke-width="2" opacity="0">
+<animate attributeName="y1" values="98;296" dur="2.2s" begin="0.5s" fill="freeze"/>
+<animate attributeName="y2" values="128;326" dur="2.2s" begin="0.5s" fill="freeze"/>
+<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.06;0.9;1" dur="2.2s" begin="0.5s" fill="freeze"/>
+</line>
+<text x="440" y="364" text-anchor="middle" font-size="10" class="faint">write-ahead logging — records are made durable before buffered pages are applied</text>
+</svg>

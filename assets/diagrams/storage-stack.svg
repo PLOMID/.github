@@ -31,7 +31,7 @@
 <g>
 <line x1="120" y1="92" x2="760" y2="92" class="rule" stroke-width="3"/>
 <rect x="106" y="106" width="8" height="8" class="blue"/>
-<text x="120" y="116" font-size="14" class="ink">Query / Execution</text><text x="760" y="116" font-size="10" text-anchor="end" class="faint">SQL · optimizer · executor</text>
+<text x="120" y="116" font-size="14" class="ink">Query / Execution</text><text x="760" y="116" font-size="10" text-anchor="end" class="faint">SQL · parser · executor</text>
 <line x1="140" y1="140" x2="740" y2="140" class="rule" stroke-width="5"/>
 <rect x="126" y="154" width="8" height="8" class="violet"/>
 <text x="140" y="164" font-size="14" class="ink">Transactions / Data Management</text><text x="740" y="164" font-size="10" text-anchor="end" class="faint">MVCC · lifecycle</text>

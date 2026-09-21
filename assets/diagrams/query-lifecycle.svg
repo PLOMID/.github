@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="qlT qlD">
 <title id="qlT">Query lifecycle</title>
-<desc id="qlD">A request moves through query, parse, plan, execute, access, and persist — the lifecycle of a request against the shared storage foundation, shown as a numbered trace. One signal travels the lifecycle once.</desc>
+<desc id="qlD">A request moves through query, parse, execute, access, storage, and persist — the lifecycle of a request against the shared storage foundation, shown as a numbered trace. One signal travels the lifecycle once.</desc>
 <style>
 .bg{fill:#F7F8F8}
 .ink{fill:#16181B}
@@ -54,18 +54,18 @@
 <g font-size="13" font-weight="600" letter-spacing="2" class="mono ink">
 <text x="278" y="125">QUERY</text>
 <text x="278" y="177">PARSE</text>
-<text x="278" y="229">PLAN</text>
-<text x="278" y="281">EXECUTE</text>
-<text x="278" y="333">ACCESS</text>
+<text x="278" y="229">EXECUTE</text>
+<text x="278" y="281">ACCESS</text>
+<text x="278" y="333">STORAGE</text>
 <text x="278" y="385">PERSIST</text>
 </g>
 <g font-size="10.5" text-anchor="end" class="muted">
 <text x="832" y="125">request arrives</text>
 <text x="832" y="177">statement → tree</text>
-<text x="832" y="229">logical → physical</text>
-<text x="832" y="281">operators run</text>
-<text x="832" y="333">point · range · set</text>
-<text x="832" y="385">durable state</text>
+<text x="832" y="229">operators · index access</text>
+<text x="832" y="281">point · range · prune</text>
+<text x="832" y="333">buffer · page · block</text>
+<text x="832" y="385">WAL · durable state</text>
 </g>
 <text x="440" y="410" text-anchor="middle" font-size="10" class="faint">illustrative stage order — not timings</text>
 </svg>
