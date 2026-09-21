@@ -15,7 +15,7 @@
 <p>PLOMID is building a unified data layer for SQL, JSON, time-series, vector, graph, and distributed workloads.</p>
 <p><sub>PLOMID — Platform for Modern Intelligence and Data</sub></p>
 
-[Platform](#a-unified-data-foundation) · [Architecture](#architecture) · [Documentation](https://github.com/PLOMID/plomid) · [Source](https://github.com/PLOMID/plomid)
+[Foundation](#01-foundation) · [Architecture](#03-architecture) · [Source](https://github.com/PLOMID/plomid) · [Issues](https://github.com/PLOMID/plomid/issues)
 
 ![Applications, data workloads, PLOMID, common data layer, data infrastructure](../assets/diagrams/hero-data-infrastructure.svg)
 
@@ -23,13 +23,17 @@
 
 ---
 
-## A unified data foundation
+## 01 Foundation
+
+### A unified data foundation
 
 Modern applications work across relational data, documents, time-series streams, vectors, graphs, blobs, and distributed data. These are frequently handled through separate systems and infrastructure layers.
 
 PLOMID explores a unified architecture where these workloads share a common underlying data foundation — a single infrastructure layer designed to support multiple data models and access patterns.
 
-## Multiple models. One foundation.
+## 02 Data models
+
+### Multiple models. One foundation.
 
 <div align="center">
 
@@ -39,13 +43,15 @@ PLOMID explores a unified architecture where these workloads share a common unde
 
 PLOMID brings SQL, JSON, time-series, vector, graph, and distributed data workloads toward a common data infrastructure.
 
-## One data layer
+### One data layer
 
 Applications increasingly combine different forms of data in a single workflow — a transaction that touches documents, a query that spans relational and analytical shapes, an agent that retrieves vectors alongside records.
 
 Instead of treating every data model as an isolated system, PLOMID is designed around a shared infrastructure foundation: common storage, shared data management, a common transactional foundation, common metadata, and multiple access patterns over the same underlying data.
 
-## Architecture
+<sub>STORAGE · TRANSACTIONS · METADATA · ACCESS · PERSISTENCE</sub>
+
+## 03 Architecture
 
 <div align="center">
 
@@ -55,7 +61,19 @@ Instead of treating every data model as an isolated system, PLOMID is designed a
 
 Applications connect through familiar interfaces — including a PostgreSQL-compatible wire interface — and the platform is responsible for execution, transactions, and durable storage beneath them.
 
-## Built from the storage layer up.
+### Query → execution → storage
+
+<div align="center">
+
+![Query lifecycle: query, parse, plan, execute, access, persist](../assets/diagrams/query-lifecycle.svg)
+
+</div>
+
+A request enters as a query, is parsed and planned, then executed; access and persistence resolve against the shared storage foundation.
+
+## 04 Storage
+
+### Built from the storage layer up.
 
 PLOMID is approached from the underlying data infrastructure upward: durable pages and persistence first, then transactions and data management, then query and access.
 
@@ -65,17 +83,25 @@ PLOMID is approached from the underlying data infrastructure upward: durable pag
 
 </div>
 
-## Engineered as infrastructure.
+## 05 Engineering
+
+### Engineered as infrastructure.
 
 PLOMID is engineered in Rust around the concerns of a storage-backed data system: query execution, transactions and MVCC, page management and persistence, write-ahead logging, checksums, indexing, and networked access.
 
+<sub>RUST · STORAGE · TRANSACTIONS · MVCC · WAL · RECOVERY · INDEXING · QUERY EXECUTION · NETWORKING · PERSISTENCE</sub>
+
 The emphasis is on correctness at the foundation — durability, transactional behavior, and clean layering — so that higher-level data models rest on infrastructure that is easy to reason about.
 
-## Data access
+## 06 Access
+
+### Data access
 
 Different workloads require different access structures. The architecture distinguishes point lookups, ordered range access, and set filtering as separate access paths over shared stored data. Each structure serves its access pattern; the stored data beneath them remains part of the same foundation.
 
-## The system, in the terminal
+## 07 Runtime
+
+### The system, in the terminal
 
 <div align="center">
 
@@ -87,7 +113,9 @@ Different workloads require different access structures. The architecture distin
 
 </div>
 
-## Data where it belongs.
+## 08 Deployment
+
+### Data where it belongs.
 
 PLOMID is intended as infrastructure that deploys according to application and data requirements.
 
@@ -99,18 +127,28 @@ PLOMID is intended as infrastructure that deploys according to application and d
 
 The design centers on flexible deployment and data placement — spanning deployment, residency, replication, access, and storage — giving infrastructure teams a foundation that can operate across cloud, on-premises, edge, and controlled environments.
 
-## Built in the open.
+<sub>DATA PLACEMENT · RESIDENCY · REPLICATION · ACCESS · JURISDICTION · STORAGE</sub>
+
+## 09 Open engineering
+
+### Built in the open.
 
 The engineering work behind PLOMID lives in this organization:
 
-- [Source](https://github.com/PLOMID/plomid) — explore the PLOMID implementation.
-- [Architecture](https://github.com/PLOMID/plomid) — understand the system design.
-- [Documentation](https://github.com/PLOMID/plomid) — explore the technical documentation.
-- [Issues](https://github.com/PLOMID/plomid/issues) — follow development and discussions.
+- [Source](https://github.com/PLOMID/plomid) — the PLOMID implementation.
+- [Issues](https://github.com/PLOMID/plomid/issues) — engineering discussion.
+
+## System map
+
+<div align="center">
+
+![PLOMID system map: applications, workloads, core, transactions, execution, access, storage foundation](../assets/diagrams/system-map.svg)
+
+</div>
 
 ## Explore PLOMID
 
-[Source](https://github.com/PLOMID/plomid) · [Architecture](https://github.com/PLOMID/plomid) · [Documentation](https://github.com/PLOMID/plomid) · [Issues](https://github.com/PLOMID/plomid/issues)
+[Source](https://github.com/PLOMID/plomid) · [Issues](https://github.com/PLOMID/plomid/issues)
 
 ---
 

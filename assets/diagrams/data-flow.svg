@@ -64,7 +64,7 @@
 </mask>
 </defs>
 <g class="motion">
-<rect x="404" y="126" width="14" height="62" fill="url(#flowBand)" mask="url(#flowLogoMask)">
+<rect x="404" y="126" width="14" height="62" fill="url(#flowBand)" mask="url(#flowLogoMask)" opacity="0">
 <animate attributeName="x" values="404;404;484;484" keyTimes="0;0.35;0.60;1" dur="8s" begin="0.6s" repeatCount="indefinite"/>
 <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.33;0.37;0.58;0.66;1" dur="8s" begin="0.6s" repeatCount="indefinite"/>
 </rect>
@@ -75,7 +75,7 @@
 <text x="760" y="206">durable state</text>
 </g>
 <!-- one signal: short accent segment traveling the pipeline -->
-<line class="motion" x1="120" y1="170" x2="190" y2="170" stroke="#0A7EA4" stroke-width="2">
+<line class="motion" x1="120" y1="170" x2="190" y2="170" stroke="#0A7EA4" stroke-width="2" opacity="0">
 <animate attributeName="x1" values="120;405;405;690" keyTimes="0;0.35;0.65;1" dur="8s" begin="0.6s" repeatCount="indefinite"/>
 <animate attributeName="x2" values="190;475;475;760" keyTimes="0;0.35;0.65;1" dur="8s" begin="0.6s" repeatCount="indefinite"/>
 <animate attributeName="opacity" values="1;1;0" keyTimes="0;0.9;1" dur="8s" begin="0.6s" repeatCount="indefinite"/>

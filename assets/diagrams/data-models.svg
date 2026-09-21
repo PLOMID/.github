@@ -8,6 +8,7 @@
 .line{stroke:#9AA1AB}
 .rule{stroke:#DCE0E4}
 .logo{fill:#14161A}
+.motion{}
 @media (prefers-color-scheme: dark){
 .bg{fill:#0D1113}
 .ink{fill:#E7E9EB}
@@ -16,6 +17,7 @@
 .rule{stroke:#212629}
 .logo{fill:#F2F3F4}
 }
+@media (prefers-reduced-motion: reduce){.motion{display:none}}
 </style>
 <rect width="880" height="340" class="bg"/>
 <text x="48" y="44" font-size="11" letter-spacing="3.5" class="muted">DATA MODELS</text>
@@ -43,6 +45,9 @@
 <path d="M 1478 1386 L 1476 1388 L 1476 1608 L 1485 1610 L 1518 1609 L 1518 1387 Z"/>
 <path d="M 1597 1387 L 1598 1429 L 1781 1429 L 1802 1451 L 1802 1545 L 1780 1568 L 1641 1568 L 1639 1566 L 1639 1462 L 1597 1462 L 1598 1609 L 1797 1609 L 1844 1562 L 1845 1436 L 1797 1386 Z"/>
 </g></g>
+<!-- one-time initialization: each connection draws toward PLOMID, then the system is static. -->
+<line class="motion" x1="330" y1="170" x2="330" y2="170" stroke="#0A7EA4" stroke-width="2" opacity="0"><animate attributeName="x2" values="330;405.7" dur="0.9s" begin="0.5s" fill="freeze"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.2;0.7;1" dur="0.9s" begin="0.5s" fill="freeze"/></line>
+<line class="motion" x1="550" y1="170" x2="550" y2="170" stroke="#0A7EA4" stroke-width="2" opacity="0"><animate attributeName="x2" values="550;474.3" dur="0.9s" begin="1.1s" fill="freeze"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.2;0.7;1" dur="0.9s" begin="1.1s" fill="freeze"/></line>
 <line x1="474.3" y1="170" x2="550" y2="170" class="line"/>
 <!-- other data representations -->
 <line x1="550" y1="112" x2="550" y2="228" class="line"/>

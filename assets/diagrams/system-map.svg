@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="600" viewBox="0 0 880 600" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="smT smD">
+<title id="smT">PLOMID system map</title>
+<desc id="smD">Applications reach SQL, JSON, and time-series workloads, which converge on PLOMID core; transactions, execution, and access sit above the storage foundation and durable data infrastructure.</desc>
+<style>
+.bg{fill:#F7F8F8}
+.ink{fill:#16181B}
+.muted{fill:#5A616B}
+.line{stroke:#9AA1AB}
+.rule{stroke:#DCE0E4}
+.motion{}
+@media (prefers-color-scheme: dark){
+.bg{fill:#0D1113}
+.ink{fill:#E7E9EB}
+.muted{fill:#98A1AB}
+.line{stroke:#3A4046}
+.rule{stroke:#212629}
+}
+@media (prefers-reduced-motion: reduce){.motion{display:none}}
+</style>
+<rect width="880" height="600" class="bg"/>
+<text x="48" y="44" font-size="11" letter-spacing="3.5" class="muted">SYSTEM MAP</text>
+<line x1="48" y1="58" x2="832" y2="58" class="rule"/>
+<!-- central spine -->
+<line x1="440" y1="108" x2="440" y2="556" class="rule" stroke-dasharray="3 5"/>
+<!-- one signal travels the architecture -->
+<line class="motion" x1="440" y1="108" x2="440" y2="150" stroke="#0A7EA4" stroke-width="2" opacity="0">
+<animate attributeName="y1" values="108;516;516" keyTimes="0;0.70;1" dur="7s" begin="0.5s" repeatCount="indefinite"/>
+<animate attributeName="y2" values="150;558;558" keyTimes="0;0.70;1" dur="7s" begin="0.5s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.04;0.66;0.72;1" dur="7s" begin="0.5s" repeatCount="indefinite"/>
+</line>
+<!-- horizontal buses -->
+<g class="line" stroke-width="1.2">
+<line x1="220" y1="152" x2="660" y2="152"/>
+<line x1="220" y1="246" x2="660" y2="246"/>
+<line x1="220" y1="358" x2="660" y2="358"/>
+<line x1="220" y1="452" x2="660" y2="452"/>
+<line x1="220" y1="152" x2="220" y2="176"/>
+<line x1="660" y1="152" x2="660" y2="176"/>
+<line x1="220" y1="210" x2="220" y2="234"/>
+<line x1="660" y1="210" x2="660" y2="234"/>
+<line x1="220" y1="358" x2="220" y2="382"/>
+<line x1="660" y1="358" x2="660" y2="382"/>
+<line x1="220" y1="416" x2="220" y2="440"/>
+<line x1="660" y1="416" x2="660" y2="440"/>
+</g>
+<!-- label masks break the spine behind centred labels -->
+<g class="bg">
+<rect x="376" y="78" width="128" height="20"/>
+<rect x="404" y="182" width="72" height="20"/>
+<rect x="350" y="282" width="180" height="22"/>
+<rect x="396" y="388" width="88" height="20"/>
+<rect x="336" y="488" width="208" height="22"/>
+<rect x="300" y="556" width="280" height="22"/>
+</g>
+<g text-anchor="middle" class="ink" font-weight="600" letter-spacing="2">
+<text x="440" y="93" font-size="14">APPLICATIONS</text>
+<text x="220" y="197" font-size="13">SQL</text>
+<text x="440" y="197" font-size="13">JSON</text>
+<text x="660" y="197" font-size="13">TIME SERIES</text>
+<text x="440" y="299" font-size="15">PLOMID CORE</text>
+<text x="220" y="403" font-size="13">TRANSACTIONS</text>
+<text x="440" y="403" font-size="13">EXECUTION</text>
+<text x="660" y="403" font-size="13">ACCESS</text>
+<text x="440" y="505" font-size="15">STORAGE FOUNDATION</text>
+<text x="440" y="573" font-size="14">DURABLE DATA INFRASTRUCTURE</text>
+</g>
+</svg>

@@ -1,8 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="880" height="380" viewBox="0 0 880 380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="dpT dpD">
 <title id="dpT">Deployment topology</title><desc id="dpD">One PLOMID platform fanning out to cloud, on-premises, and edge environments.</desc>
 <style>
-.bg{fill:#F7F8F8}.ink{fill:#1a1a1a}.muted{fill:#5c5c5c}.line{stroke:#b9b9b9}.rule{stroke:#d9d9d9}.logo{fill:#111}
+.bg{fill:#F7F8F8}.ink{fill:#1a1a1a}.muted{fill:#5c5c5c}.line{stroke:#b9b9b9}.rule{stroke:#d9d9d9}.logo{fill:#111}.motion{}
 @media (prefers-color-scheme: dark){.bg{fill:#0D1113}.ink{fill:#e9e9e9}.muted{fill:#9a9a9a}.line{stroke:#3d4144}.rule{stroke:#26292c}.logo{fill:#f2f2f2}}
+@media (prefers-reduced-motion: reduce){.motion{display:none}}
 </style>
 <rect width="880" height="380" class="bg"/>
 <text x="48" y="42" font-size="11" letter-spacing="3" class="muted">DEPLOYMENT TOPOLOGY</text>
@@ -25,6 +26,21 @@
 <path id="br3" d="M484 168 C 540 210, 600 230, 660 244"/>
 </g>
 <g fill="#0A7EA4"><circle cx="220" cy="244" r="3.5"/><circle cx="440" cy="244" r="3.5"/><circle cx="660" cy="244" r="3.5"/></g>
+<!-- one signal travels outward from PLOMID to each environment, once. -->
+<g class="motion" fill="#0A7EA4">
+<rect x="-9" y="-1.5" width="18" height="3" rx="1.5" opacity="0">
+<animateMotion dur="1.1s" begin="0.5s" fill="freeze" rotate="auto" path="M396 168 C 340 210, 280 230, 220 244"/>
+<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.75;1" dur="1.1s" begin="0.5s" fill="freeze"/>
+</rect>
+<rect x="-9" y="-1.5" width="18" height="3" rx="1.5" opacity="0">
+<animateMotion dur="0.7s" begin="1.7s" fill="freeze" rotate="auto" path="M440 192 V244"/>
+<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.75;1" dur="0.7s" begin="1.7s" fill="freeze"/>
+</rect>
+<rect x="-9" y="-1.5" width="18" height="3" rx="1.5" opacity="0">
+<animateMotion dur="1.1s" begin="2.5s" fill="freeze" rotate="auto" path="M484 168 C 540 210, 600 230, 660 244"/>
+<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.75;1" dur="1.1s" begin="2.5s" fill="freeze"/>
+</rect>
+</g>
 <g font-size="14" class="ink" text-anchor="middle">
 <text x="220" y="270">CLOUD</text>
 <text x="440" y="270">ON-PREM</text>
