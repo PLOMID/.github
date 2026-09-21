@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="380" viewBox="0 0 880 380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="dpT dpD">
+<title id="dpT">Deployment topology</title><desc id="dpD">One PLOMID platform fanning out to cloud, on-premises, and edge environments.</desc>
+<style>
+.bg{fill:#F7F8F8}.ink{fill:#1a1a1a}.muted{fill:#5c5c5c}.line{stroke:#b9b9b9}.rule{stroke:#d9d9d9}.logo{fill:#111}
+@media (prefers-color-scheme: dark){.bg{fill:#0D1113}.ink{fill:#e9e9e9}.muted{fill:#9a9a9a}.line{stroke:#3d4144}.rule{stroke:#26292c}.logo{fill:#f2f2f2}}
+</style>
+<rect width="880" height="380" class="bg"/>
+<text x="48" y="42" font-size="11" letter-spacing="3" class="muted">DEPLOYMENT TOPOLOGY</text>
+<line x1="48" y1="56" x2="832" y2="56" class="rule"/>
+<!-- hub: logo h=52 centered 440,128 -->
+<circle cx="440" cy="128" r="64" fill="none" class="rule"/>
+<g transform="translate(411.8,102) scale(0.0277)"><g class="logo" fill-rule="evenodd">
+<path d="M 202 1608 L 216 1610 L 244 1609 L 244 1531 L 246 1529 L 380 1529 L 402 1527 L 437 1495 L 437 1418 L 401 1386 L 203 1386 L 203 1429 L 387 1429 L 395 1436 L 395 1476 L 385 1486 L 230 1487 L 202 1508 Z"/>
+<path d="M 515 1386 L 514 1609 L 721 1609 L 721 1568 L 556 1567 L 555 1387 Z"/>
+<path d="M 1023 269 L 693 465 L 621 510 L 621 1055 L 817 1175 L 817 627 L 1009 514 L 1019 510 L 1210 629 L 1210 713 L 1008 835 L 1008 1061 L 1260 916 L 1409 827 L 1409 509 Z"/>
+<path d="M 841 1386 L 780 1449 L 781 1549 L 841 1609 L 992 1610 L 1054 1548 L 1053 1447 L 992 1386 Z M 822 1465 L 857 1429 L 978 1429 L 1012 1465 L 1012 1532 L 977 1568 L 857 1568 L 822 1532 Z"/>
+<path d="M 1127 1387 L 1127 1610 L 1169 1608 L 1170 1459 L 1264 1539 L 1356 1458 L 1358 1460 L 1358 1609 L 1399 1609 L 1400 1391 L 1398 1386 L 1366 1386 L 1264 1480 L 1161 1386 Z"/>
+<path d="M 1478 1386 L 1476 1388 L 1476 1608 L 1485 1610 L 1518 1609 L 1518 1387 Z"/>
+<path d="M 1597 1387 L 1598 1429 L 1781 1429 L 1802 1451 L 1802 1545 L 1780 1568 L 1641 1568 L 1639 1566 L 1639 1462 L 1597 1462 L 1598 1609 L 1797 1609 L 1844 1562 L 1845 1436 L 1797 1386 Z"/>
+</g></g>
+<!-- branches -->
+<g fill="none" class="line" stroke-width="1.5">
+<path id="br1" d="M396 168 C 340 210, 280 230, 220 244"/>
+<path id="br2" d="M440 192 V244"/>
+<path id="br3" d="M484 168 C 540 210, 600 230, 660 244"/>
+</g>
+<g fill="#0A7EA4"><circle cx="220" cy="244" r="3.5"/><circle cx="440" cy="244" r="3.5"/><circle cx="660" cy="244" r="3.5"/></g>
+<g font-size="14" class="ink" text-anchor="middle">
+<text x="220" y="270">CLOUD</text>
+<text x="440" y="270">ON-PREM</text>
+<text x="660" y="270">EDGE</text>
+</g>
+<g font-size="10" class="muted" text-anchor="middle">
+<text x="220" y="290">elastic capacity</text>
+<text x="440" y="290">controlled systems</text>
+<text x="660" y="290">close to data</text>
+</g>
+<text x="440" y="348" text-anchor="middle" font-size="11" letter-spacing="3" class="muted">ONE PLATFORM — DATA WHERE IT BELONGS</text>
+</svg>

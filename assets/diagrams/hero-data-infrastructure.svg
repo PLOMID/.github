@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="heroT heroD">
+<title id="heroT">PLOMID data infrastructure</title>
+<desc id="heroD">SQL, JSON, time series, vector, and graph workloads share a single PLOMID common data layer.</desc>
+<style>
+.bg{fill:#F7F8F8}
+.ink{fill:#16181B}
+.muted{fill:#5A616B}
+.line{stroke:#9AA1AB}
+.rule{stroke:#DCE0E4}
+.lead{stroke:#24282E}
+.logo{fill:#14161A}
+.motion{}
+@media (prefers-color-scheme: dark){
+.bg{fill:#0D1113}
+.ink{fill:#E7E9EB}
+.muted{fill:#98A1AB}
+.line{stroke:#3A4046}
+.rule{stroke:#212629}
+.lead{stroke:#C6CBD1}
+.logo{fill:#F2F3F4}
+}
+@media (prefers-reduced-motion: reduce){.motion{display:none}}
+</style>
+<rect width="880" height="470" class="bg"/>
+<text x="48" y="44" font-size="11" letter-spacing="3.5" class="muted">DATA INFRASTRUCTURE</text>
+<line x1="48" y1="58" x2="832" y2="58" class="rule"/>
+<!-- workloads -->
+<g font-size="17" font-weight="600" letter-spacing="1.5" text-anchor="middle" class="ink">
+<text x="128" y="96">SQL</text>
+<text x="284" y="96">JSON</text>
+<text x="440" y="96">TIME SERIES</text>
+<text x="596" y="96">VECTOR</text>
+<text x="752" y="96">GRAPH</text>
+</g>
+<!-- stems converge on one infrastructure rule -->
+<g class="line" stroke-width="1">
+<line x1="128" y1="112" x2="128" y2="134"/>
+<line x1="284" y1="112" x2="284" y2="134"/>
+<line x1="440" y1="112" x2="440" y2="134"/>
+<line x1="596" y1="112" x2="596" y2="134"/>
+<line x1="752" y1="112" x2="752" y2="134"/>
+<line x1="128" y1="134" x2="752" y2="134" stroke-width="1.5"/>
+<line x1="440" y1="134" x2="440" y2="200"/>
+</g>
+<!-- PLOMID -->
+<g transform="translate(400.8,208) scale(0.0477)"><g class="logo" fill-rule="evenodd">
+<path d="M 202 1608 L 216 1610 L 244 1609 L 244 1531 L 246 1529 L 380 1529 L 402 1527 L 437 1495 L 437 1418 L 401 1386 L 203 1386 L 203 1429 L 387 1429 L 395 1436 L 395 1476 L 385 1486 L 230 1487 L 202 1508 Z"/>
+<path d="M 515 1386 L 514 1609 L 721 1609 L 721 1568 L 556 1567 L 555 1387 Z"/>
+<path d="M 1023 269 L 693 465 L 621 510 L 621 1055 L 817 1175 L 817 627 L 1009 514 L 1019 510 L 1210 629 L 1210 713 L 1008 835 L 1008 1061 L 1260 916 L 1409 827 L 1409 509 Z"/>
+<path d="M 841 1386 L 780 1449 L 781 1549 L 841 1609 L 992 1610 L 1054 1548 L 1053 1447 L 992 1386 Z M 822 1465 L 857 1429 L 978 1429 L 1012 1465 L 1012 1532 L 977 1568 L 857 1568 L 822 1532 Z"/>
+<path d="M 1127 1387 L 1127 1610 L 1169 1608 L 1170 1459 L 1264 1539 L 1356 1458 L 1358 1460 L 1358 1609 L 1399 1609 L 1400 1391 L 1398 1386 L 1366 1386 L 1264 1480 L 1161 1386 Z"/>
+<path d="M 1478 1386 L 1476 1388 L 1476 1608 L 1485 1610 L 1518 1609 L 1518 1387 Z"/>
+<path d="M 1597 1387 L 1598 1429 L 1781 1429 L 1802 1451 L 1802 1545 L 1780 1568 L 1641 1568 L 1639 1566 L 1639 1462 L 1597 1462 L 1598 1609 L 1797 1609 L 1844 1562 L 1845 1436 L 1797 1386 Z"/>
+</g></g>
+<!-- data pulse through the mark: a soft accent band sweeps once in the data direction (workloads → storage). A static, logo-shaped mask confines the accent to the official logo geometry, so the mark stays exact and the neutral logo is complete at rest. -->
+<defs>
+<linearGradient id="heroBand" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#0A7EA4" stop-opacity="0"/>
+<stop offset="0.35" stop-color="#0A7EA4" stop-opacity="0.35"/>
+<stop offset="0.75" stop-color="#0A7EA4" stop-opacity="0.95"/>
+<stop offset="0.9" stop-color="#0A7EA4" stop-opacity="0.95"/>
+<stop offset="1" stop-color="#0A7EA4" stop-opacity="0"/>
+</linearGradient>
+<mask id="heroLogoMask" maskUnits="userSpaceOnUse" x="402" y="212" width="96" height="84">
+<g transform="translate(400.8,208) scale(0.0477)"><g fill="#FFFFFF" fill-rule="evenodd">
+<path d="M 202 1608 L 216 1610 L 244 1609 L 244 1531 L 246 1529 L 380 1529 L 402 1527 L 437 1495 L 437 1418 L 401 1386 L 203 1386 L 203 1429 L 387 1429 L 395 1436 L 395 1476 L 385 1486 L 230 1487 L 202 1508 Z"/>
+<path d="M 515 1386 L 514 1609 L 721 1609 L 721 1568 L 556 1567 L 555 1387 Z"/>
+<path d="M 1023 269 L 693 465 L 621 510 L 621 1055 L 817 1175 L 817 627 L 1009 514 L 1019 510 L 1210 629 L 1210 713 L 1008 835 L 1008 1061 L 1260 916 L 1409 827 L 1409 509 Z"/>
+<path d="M 841 1386 L 780 1449 L 781 1549 L 841 1609 L 992 1610 L 1054 1548 L 1053 1447 L 992 1386 Z M 822 1465 L 857 1429 L 978 1429 L 1012 1465 L 1012 1532 L 977 1568 L 857 1568 L 822 1532 Z"/>
+<path d="M 1127 1387 L 1127 1610 L 1169 1608 L 1170 1459 L 1264 1539 L 1356 1458 L 1358 1460 L 1358 1609 L 1399 1609 L 1400 1391 L 1398 1386 L 1366 1386 L 1264 1480 L 1161 1386 Z"/>
+<path d="M 1478 1386 L 1476 1388 L 1476 1608 L 1485 1610 L 1518 1609 L 1518 1387 Z"/>
+<path d="M 1597 1387 L 1598 1429 L 1781 1429 L 1802 1451 L 1802 1545 L 1780 1568 L 1641 1568 L 1639 1566 L 1639 1462 L 1597 1462 L 1598 1609 L 1797 1609 L 1844 1562 L 1845 1436 L 1797 1386 Z"/>
+</g></g>
+</mask>
+</defs>
+<g class="motion">
+<rect x="402" y="193" width="96" height="20" fill="url(#heroBand)" mask="url(#heroLogoMask)">
+<animate attributeName="y" values="193;294;294" keyTimes="0;0.225;1" dur="8s" begin="0.6s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.02;0.24;0.3;1" dur="8s" begin="0.6s" repeatCount="indefinite"/>
+</rect>
+</g>
+<!-- common data layer -->
+<line x1="48" y1="318" x2="832" y2="318" class="lead" stroke-width="2"/>
+<text x="48" y="350" font-size="13" font-weight="600" letter-spacing="3.5" class="ink">COMMON DATA LAYER</text>
+<text x="832" y="350" font-size="10" text-anchor="end" class="muted">shared storage · transactions · metadata</text>
+<line x1="48" y1="360" x2="832" y2="360" class="rule"/>
+<text x="440" y="428" text-anchor="middle" font-size="11" letter-spacing="4" class="muted">DATA INFRASTRUCTURE</text>
+</svg>

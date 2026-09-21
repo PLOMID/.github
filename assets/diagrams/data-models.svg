@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="340" viewBox="0 0 880 340" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="dmT dmD">
+<title id="dmT">Multiple data models, one platform</title>
+<desc id="dmD">SQL, JSON, and time series on one side; vector and graph on the other; one PLOMID platform.</desc>
+<style>
+.bg{fill:#F7F8F8}
+.ink{fill:#16181B}
+.muted{fill:#5A616B}
+.line{stroke:#9AA1AB}
+.rule{stroke:#DCE0E4}
+.logo{fill:#14161A}
+@media (prefers-color-scheme: dark){
+.bg{fill:#0D1113}
+.ink{fill:#E7E9EB}
+.muted{fill:#98A1AB}
+.line{stroke:#3A4046}
+.rule{stroke:#212629}
+.logo{fill:#F2F3F4}
+}
+</style>
+<rect width="880" height="340" class="bg"/>
+<text x="48" y="44" font-size="11" letter-spacing="3.5" class="muted">DATA MODELS</text>
+<line x1="48" y1="58" x2="832" y2="58" class="rule"/>
+<!-- transaction / structured data -->
+<line x1="330" y1="112" x2="330" y2="228" class="line"/>
+<g font-size="18" font-weight="600" letter-spacing="1.2" text-anchor="end" class="ink">
+<text x="312" y="128">SQL</text>
+<text x="312" y="170">JSON</text>
+<text x="312" y="212">TIME SERIES</text>
+</g>
+<g class="rule" stroke-width="1">
+<line x1="312" y1="128" x2="330" y2="128"/>
+<line x1="312" y1="170" x2="330" y2="170"/>
+<line x1="312" y1="212" x2="330" y2="212"/>
+</g>
+<line x1="330" y1="170" x2="405.7" y2="170" class="line"/>
+<!-- PLOMID -->
+<g transform="translate(405.7,142) scale(0.04176)"><g class="logo" fill-rule="evenodd">
+<path d="M 202 1608 L 216 1610 L 244 1609 L 244 1531 L 246 1529 L 380 1529 L 402 1527 L 437 1495 L 437 1418 L 401 1386 L 203 1386 L 203 1429 L 387 1429 L 395 1436 L 395 1476 L 385 1486 L 230 1487 L 202 1508 Z"/>
+<path d="M 515 1386 L 514 1609 L 721 1609 L 721 1568 L 556 1567 L 555 1387 Z"/>
+<path d="M 1023 269 L 693 465 L 621 510 L 621 1055 L 817 1175 L 817 627 L 1009 514 L 1019 510 L 1210 629 L 1210 713 L 1008 835 L 1008 1061 L 1260 916 L 1409 827 L 1409 509 Z"/>
+<path d="M 841 1386 L 780 1449 L 781 1549 L 841 1609 L 992 1610 L 1054 1548 L 1053 1447 L 992 1386 Z M 822 1465 L 857 1429 L 978 1429 L 1012 1465 L 1012 1532 L 977 1568 L 857 1568 L 822 1532 Z"/>
+<path d="M 1127 1387 L 1127 1610 L 1169 1608 L 1170 1459 L 1264 1539 L 1356 1458 L 1358 1460 L 1358 1609 L 1399 1609 L 1400 1391 L 1398 1386 L 1366 1386 L 1264 1480 L 1161 1386 Z"/>
+<path d="M 1478 1386 L 1476 1388 L 1476 1608 L 1485 1610 L 1518 1609 L 1518 1387 Z"/>
+<path d="M 1597 1387 L 1598 1429 L 1781 1429 L 1802 1451 L 1802 1545 L 1780 1568 L 1641 1568 L 1639 1566 L 1639 1462 L 1597 1462 L 1598 1609 L 1797 1609 L 1844 1562 L 1845 1436 L 1797 1386 Z"/>
+</g></g>
+<line x1="474.3" y1="170" x2="550" y2="170" class="line"/>
+<!-- other data representations -->
+<line x1="550" y1="112" x2="550" y2="228" class="line"/>
+<g font-size="18" font-weight="600" letter-spacing="1.2" class="ink">
+<text x="568" y="128">VECTOR</text>
+<text x="568" y="212">GRAPH</text>
+</g>
+<g class="rule" stroke-width="1">
+<line x1="550" y1="128" x2="568" y2="128"/>
+<line x1="550" y1="212" x2="568" y2="212"/>
+</g>
+<text x="440" y="302" text-anchor="middle" font-size="11" letter-spacing="3" class="muted">DIFFERENT MODELS — ONE PLATFORM</text>
+</svg>
