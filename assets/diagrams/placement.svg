@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="360" viewBox="0 0 880 360" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="plT plD">
+<title id="plT">Data placement control plane</title>
+<desc id="plD">A vertical control plane for data placement: location, residency, replication, access, storage, and jurisdiction. One signal descends the plane once.</desc>
+<style>
+.bg{fill:#F7F8F8}
+.panel{fill:#EEF1F2}
+.ink{fill:#16181B}
+.muted{fill:#5A616B}
+.faint{fill:#8A9099}
+.line{stroke:#9AA1AB}
+.rule{stroke:#DCE0E4}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.blue{fill:#0A7EA4}
+.green{fill:#3FAE78}
+.amber{fill:#C58A32}
+.violet{fill:#7567A8}
+.motion{}
+@media (prefers-color-scheme: dark){
+.bg{fill:#0D1113}
+.panel{fill:#15181B}
+.ink{fill:#E7E9EB}
+.muted{fill:#98A1AB}
+.faint{fill:#6E747C}
+.line{stroke:#3A4046}
+.rule{stroke:#212629}
+.blue{fill:#2E9BC0}
+.green{fill:#4FBE88}
+.amber{fill:#D69A42}
+.violet{fill:#8B7DBE}
+}
+@media (prefers-reduced-motion: reduce){.motion{display:none}}
+</style>
+<rect width="880" height="360" class="bg"/>
+<text x="48" y="44" font-size="11" letter-spacing="3.5" class="muted">DATA PLACEMENT</text>
+<line x1="48" y1="58" x2="832" y2="58" class="rule"/>
+<text x="48" y="88" font-size="10" letter-spacing="2" class="mono muted">CONTROL PLANE</text>
+<!-- control plane -->
+<line x1="120" y1="92" x2="120" y2="312" class="rule" stroke-dasharray="3 5"/>
+<g class="panel">
+<rect x="150" y="92" width="430" height="30"/>
+<rect x="150" y="130" width="430" height="30"/>
+<rect x="150" y="168" width="430" height="30"/>
+<rect x="150" y="206" width="430" height="30"/>
+<rect x="150" y="244" width="430" height="30"/>
+<rect x="150" y="282" width="430" height="30"/>
+</g>
+<g fill="none" class="line">
+<rect x="150" y="92" width="430" height="30"/>
+<rect x="150" y="130" width="430" height="30"/>
+<rect x="150" y="168" width="430" height="30"/>
+<rect x="150" y="206" width="430" height="30"/>
+<rect x="150" y="244" width="430" height="30"/>
+<rect x="150" y="282" width="430" height="30"/>
+</g>
+<g font-size="11" font-weight="600" letter-spacing="1.5" class="ink">
+<text x="166" y="112">LOCATION</text>
+<text x="166" y="150">RESIDENCY</text>
+<text x="166" y="188">REPLICATION</text>
+<text x="166" y="226">ACCESS</text>
+<text x="166" y="264">STORAGE</text>
+<text x="166" y="302">JURISDICTION</text>
+</g>
+<rect x="150" y="92" width="3" height="30" class="violet"/>
+<rect x="150" y="130" width="3" height="30" class="violet"/>
+<rect x="150" y="168" width="3" height="30" class="amber"/>
+<rect x="150" y="206" width="3" height="30" class="blue"/>
+<rect x="150" y="244" width="3" height="30" class="green"/>
+<rect x="150" y="282" width="3" height="30" class="violet"/>
+<g font-size="9" class="mono faint">
+<text x="596" y="112">region · zone</text>
+<text x="596" y="150">data boundary</text>
+<text x="596" y="188">replica set</text>
+<text x="596" y="226">access path</text>
+<text x="596" y="264">durable store</text>
+<text x="596" y="302">placement domain</text>
+</g>
+<!-- one signal descends the control plane once. -->
+<line class="motion" x1="120" y1="92" x2="120" y2="126" stroke="#0A7EA4" stroke-width="2" opacity="0">
+<animate attributeName="y1" values="92;278" dur="2.4s" begin="0.5s" fill="freeze"/>
+<animate attributeName="y2" values="126;312" dur="2.4s" begin="0.5s" fill="freeze"/>
+<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.06;0.9;1" dur="2.4s" begin="0.5s" fill="freeze"/>
+</line>
+<text x="440" y="344" text-anchor="middle" font-size="10" class="faint">infrastructure placement — where data lives, is copied, and is reached</text>
+</svg>

@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="270" viewBox="0 0 880 270" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="sfT sfD">
+<title id="sfT">Storage write path</title>
+<desc id="sfD">A request moves through the buffer pool to a page, into a block, and finally to persistence. One signal travels the path once.</desc>
+<style>
+.bg{fill:#F7F8F8}
+.panel{fill:#EEF1F2}
+.ink{fill:#16181B}
+.muted{fill:#5A616B}
+.faint{fill:#8A9099}
+.line{stroke:#9AA1AB}
+.rule{stroke:#DCE0E4}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.blue{fill:#0A7EA4}
+.green{fill:#3FAE78}
+.amber{fill:#C58A32}
+.motion{}
+@media (prefers-color-scheme: dark){
+.bg{fill:#0D1113}
+.panel{fill:#15181B}
+.ink{fill:#E7E9EB}
+.muted{fill:#98A1AB}
+.faint{fill:#6E747C}
+.line{stroke:#3A4046}
+.rule{stroke:#212629}
+.blue{fill:#2E9BC0}
+.green{fill:#4FBE88}
+.amber{fill:#D69A42}
+}
+@media (prefers-reduced-motion: reduce){.motion{display:none}}
+</style>
+<rect width="880" height="270" class="bg"/>
+<text x="48" y="44" font-size="11" letter-spacing="3.5" class="muted">STORAGE PATH</text>
+<line x1="48" y1="58" x2="832" y2="58" class="rule"/>
+<!-- links -->
+<g class="line" stroke-width="1.5">
+<line x1="168" y1="142" x2="214" y2="142"/>
+<line x1="334" y1="142" x2="380" y2="142"/>
+<line x1="500" y1="142" x2="546" y2="142"/>
+<line x1="666" y1="142" x2="712" y2="142"/>
+</g>
+<!-- nodes -->
+<g class="panel">
+<rect x="48" y="110" width="120" height="64"/>
+<rect x="214" y="110" width="120" height="64"/>
+<rect x="380" y="110" width="120" height="64"/>
+<rect x="546" y="110" width="120" height="64"/>
+<rect x="712" y="110" width="120" height="64"/>
+</g>
+<g fill="none" class="line">
+<rect x="48" y="110" width="120" height="64"/>
+<rect x="214" y="110" width="120" height="64"/>
+<rect x="380" y="110" width="120" height="64"/>
+<rect x="546" y="110" width="120" height="64"/>
+<rect x="712" y="110" width="120" height="64"/>
+</g>
+<g font-size="12" font-weight="600" letter-spacing="1" text-anchor="middle" class="ink">
+<text x="108" y="147">REQUEST</text>
+<text x="274" y="147">BUFFER</text>
+<text x="440" y="147">PAGE</text>
+<text x="606" y="147">BLOCK</text>
+<text x="772" y="147">PERSISTENCE</text>
+</g>
+<!-- state markers -->
+<rect x="48" y="96" width="8" height="8" class="blue"/>
+<rect x="214" y="96" width="8" height="8" class="amber"/>
+<rect x="380" y="96" width="8" height="8" class="blue"/>
+<rect x="546" y="96" width="8" height="8" class="blue"/>
+<rect x="712" y="96" width="8" height="8" class="green"/>
+<g font-size="9" class="mono muted" text-anchor="middle">
+<text x="108" y="196">client</text>
+<text x="274" y="196">pool · LRU</text>
+<text x="440" y="196">16 KiB</text>
+<text x="606" y="196">256 KiB · 16 pages</text>
+<text x="772" y="196">fsync</text>
+</g>
+<!-- one signal travels the write path once, then the diagram is static. -->
+<line class="motion" x1="108" y1="142" x2="178" y2="142" stroke="#0A7EA4" stroke-width="2" opacity="0">
+<animate attributeName="x1" values="108;772" dur="3s" begin="0.6s" fill="freeze"/>
+<animate attributeName="x2" values="178;842" dur="3s" begin="0.6s" fill="freeze"/>
+<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.92;1" dur="3s" begin="0.6s" fill="freeze"/>
+</line>
+<text x="440" y="238" text-anchor="middle" font-size="10" class="faint">request → buffer → page → block → persistence</text>
+</svg>

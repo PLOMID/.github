@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="24" viewBox="0 0 800 24" role="img" aria-labelledby="tb2T tb2D">
+<title id="tb2T">Terminal frame footer</title>
+<desc id="tb2D">Footer framing the real PLOMID server screenshot.</desc>
+<path d="M0 0 H800 V16 A8 8 0 0 1 792 24 H8 A8 8 0 0 1 0 16 Z" fill="#0d1117"/>
+<path d="M0 0 H800 V16 A8 8 0 0 1 792 24 H8 A8 8 0 0 1 0 16 Z" fill="none" stroke="#30363d"/>
+<text x="20" y="16" font-size="10" letter-spacing="1" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">REAL SERVER OUTPUT</text>
+<text x="780" y="16" text-anchor="end" font-size="10" letter-spacing="1" fill="#3d444d" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">PLOMID</text>
+</svg>

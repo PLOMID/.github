@@ -1,18 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="880" height="300" viewBox="0 0 880 300" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="dfT dfD">
 <title id="dfT">From access to storage</title>
-<desc id="dfD">A request travels from data access through the PLOMID core to the storage foundation.</desc>
+<desc id="dfD">A client request travels over the PostgreSQL wire interface, through data access and the PLOMID core, to the storage foundation. A single request signal travels the pipeline.</desc>
 <style>
 .bg{fill:#F7F8F8}
 .ink{fill:#16181B}
 .muted{fill:#5A616B}
+.faint{fill:#8A9099}
 .line{stroke:#9AA1AB}
 .rule{stroke:#DCE0E4}
 .logo{fill:#14161A}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 .motion{}
 @media (prefers-color-scheme: dark){
 .bg{fill:#0D1113}
 .ink{fill:#E7E9EB}
 .muted{fill:#98A1AB}
+.faint{fill:#6E747C}
 .line{stroke:#3A4046}
 .rule{stroke:#212629}
 .logo{fill:#F2F3F4}
@@ -23,15 +26,21 @@
 <text x="48" y="44" font-size="11" letter-spacing="3.5" class="muted">REQUEST PATH</text>
 <line x1="48" y1="58" x2="832" y2="58" class="rule"/>
 <!-- pipeline -->
-<line x1="120" y1="170" x2="760" y2="170" class="line" stroke-width="1.5"/>
+<line x1="90" y1="170" x2="690" y2="170" class="line" stroke-width="1.5"/>
 <g class="line" stroke-width="2">
-<line x1="120" y1="156" x2="120" y2="184"/>
-<line x1="760" y1="156" x2="760" y2="184"/>
+<line x1="90" y1="156" x2="90" y2="184"/>
+<line x1="690" y1="156" x2="690" y2="184"/>
+</g>
+<g fill="none" class="line" stroke-width="1.5">
+<circle cx="250" cy="170" r="3"/>
+<circle cx="690" cy="170" r="3"/>
 </g>
 <g font-size="13" font-weight="600" letter-spacing="2" text-anchor="middle" class="ink">
-<text x="120" y="132">DATA ACCESS</text>
-<text x="760" y="132">STORAGE FOUNDATION</text>
+<text x="90" y="132">CLIENT</text>
+<text x="250" y="132">DATA ACCESS</text>
+<text x="690" y="132">STORAGE FOUNDATION</text>
 </g>
+<text x="170" y="112" font-size="9" text-anchor="middle" class="mono muted">PostgreSQL wire</text>
 <!-- PLOMID core -->
 <g transform="translate(411.8,124) scale(0.0343)"><g class="logo" fill-rule="evenodd">
 <path d="M 202 1608 L 216 1610 L 244 1609 L 244 1531 L 246 1529 L 380 1529 L 402 1527 L 437 1495 L 437 1418 L 401 1386 L 203 1386 L 203 1429 L 387 1429 L 395 1436 L 395 1476 L 385 1486 L 230 1487 L 202 1508 Z"/>
@@ -70,14 +79,15 @@
 </rect>
 </g>
 <g font-size="10" text-anchor="middle" class="muted">
-<text x="120" y="206">queries · requests</text>
-<text x="440" y="206">processing</text>
-<text x="760" y="206">durable state</text>
+<text x="90" y="206">client</text>
+<text x="250" y="206">queries · requests</text>
+<text x="447" y="206">execution · transactions</text>
+<text x="690" y="206">durable state</text>
 </g>
 <!-- one signal: short accent segment traveling the pipeline -->
-<line class="motion" x1="120" y1="170" x2="190" y2="170" stroke="#0A7EA4" stroke-width="2" opacity="0">
-<animate attributeName="x1" values="120;405;405;690" keyTimes="0;0.35;0.65;1" dur="8s" begin="0.6s" repeatCount="indefinite"/>
-<animate attributeName="x2" values="190;475;475;760" keyTimes="0;0.35;0.65;1" dur="8s" begin="0.6s" repeatCount="indefinite"/>
+<line class="motion" x1="90" y1="170" x2="160" y2="170" stroke="#0A7EA4" stroke-width="2" opacity="0">
+<animate attributeName="x1" values="90;405;405;620" keyTimes="0;0.35;0.65;1" dur="8s" begin="0.6s" repeatCount="indefinite"/>
+<animate attributeName="x2" values="160;475;475;690" keyTimes="0;0.35;0.65;1" dur="8s" begin="0.6s" repeatCount="indefinite"/>
 <animate attributeName="opacity" values="1;1;0" keyTimes="0;0.9;1" dur="8s" begin="0.6s" repeatCount="indefinite"/>
 </line>
 <text x="440" y="264" text-anchor="middle" font-size="11" letter-spacing="3" class="muted">REQUEST → PROCESSING → PERSISTENCE</text>

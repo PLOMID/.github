@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="300" viewBox="0 0 880 300" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="apT apD">
+<title id="apT">Access paths</title>
+<desc id="apD">A lookup is served by separate access structures: B+tree for ordered ranges, filters for set membership, and columnar pruning. Each carries a distinct state marker.</desc>
+<style>
+.bg{fill:#F7F8F8}
+.panel{fill:#EEF1F2}
+.ink{fill:#16181B}
+.muted{fill:#5A616B}
+.faint{fill:#8A9099}
+.line{stroke:#9AA1AB}
+.rule{stroke:#DCE0E4}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.blue{fill:#0A7EA4}
+.violet{fill:#7567A8}
+.amber{fill:#C58A32}
+.motion{}
+@media (prefers-color-scheme: dark){
+.bg{fill:#0D1113}
+.panel{fill:#15181B}
+.ink{fill:#E7E9EB}
+.muted{fill:#98A1AB}
+.faint{fill:#6E747C}
+.line{stroke:#3A4046}
+.rule{stroke:#212629}
+.blue{fill:#2E9BC0}
+.violet{fill:#8B7DBE}
+.amber{fill:#D69A42}
+}
+@media (prefers-reduced-motion: reduce){.motion{display:none}}
+</style>
+<rect width="880" height="300" class="bg"/>
+<text x="48" y="44" font-size="11" letter-spacing="3.5" class="muted">ACCESS STRUCTURES</text>
+<line x1="48" y1="58" x2="832" y2="58" class="rule"/>
+<!-- lookup -->
+<rect x="60" y="128" width="130" height="44" rx="3" class="panel"/>
+<rect x="60" y="128" width="130" height="44" rx="3" fill="none" class="line"/>
+<text x="125" y="155" font-size="13" font-weight="600" letter-spacing="1.5" text-anchor="middle" class="ink">LOOKUP</text>
+<!-- branches -->
+<g fill="none" class="line" stroke-width="1.5">
+<line x1="190" y1="150" x2="250" y2="150"/>
+<line x1="250" y1="96" x2="250" y2="204"/>
+<line x1="250" y1="96" x2="340" y2="96"/>
+<line x1="250" y1="150" x2="340" y2="150"/>
+<line x1="250" y1="204" x2="340" y2="204"/>
+</g>
+<!-- structure nodes -->
+<g class="panel">
+<rect x="340" y="74" width="170" height="44" rx="3"/>
+<rect x="340" y="128" width="170" height="44" rx="3"/>
+<rect x="340" y="182" width="170" height="44" rx="3"/>
+</g>
+<g fill="none" class="line">
+<rect x="340" y="74" width="170" height="44" rx="3"/>
+<rect x="340" y="128" width="170" height="44" rx="3"/>
+<rect x="340" y="182" width="170" height="44" rx="3"/>
+</g>
+<rect x="340" y="74" width="3" height="44" class="blue"/>
+<rect x="340" y="128" width="3" height="44" class="violet"/>
+<rect x="340" y="182" width="3" height="44" class="amber"/>
+<g font-size="12" font-weight="600" letter-spacing="1.2" text-anchor="middle" class="ink">
+<text x="425" y="101">B+TREE</text>
+<text x="425" y="155">FILTERS</text>
+<text x="425" y="209">PRUNING</text>
+</g>
+<!-- state descriptors -->
+<rect x="524" y="93" width="6" height="6" class="blue"/>
+<text x="536" y="99" font-size="9" class="mono muted">ordered ranges</text>
+<rect x="524" y="147" width="6" height="6" class="violet"/>
+<text x="536" y="153" font-size="9" class="mono muted">set membership</text>
+<rect x="524" y="201" width="6" height="6" class="amber"/>
+<text x="536" y="207" font-size="9" class="mono muted">columnar skip</text>
+<!-- one-time initialization: a short accent segment enters the structure from the lookup. -->
+<line class="motion" x1="125" y1="150" x2="195" y2="150" stroke="#0A7EA4" stroke-width="2" opacity="0">
+<animate attributeName="x1" values="125;250" dur="0.8s" begin="0.5s" fill="freeze"/>
+<animate attributeName="x2" values="195;320" dur="0.8s" begin="0.5s" fill="freeze"/>
+<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.7;1" dur="0.8s" begin="0.5s" fill="freeze"/>
+</line>
+<text x="440" y="272" text-anchor="middle" font-size="10" class="faint">point · range · set — separate access paths over shared stored data</text>
+</svg>

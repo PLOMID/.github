@@ -1,18 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="880" height="340" viewBox="0 0 880 340" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="dmT dmD">
 <title id="dmT">Multiple data models, one platform</title>
-<desc id="dmD">SQL, JSON, and time series on one side; vector and graph on the other; one PLOMID platform.</desc>
+<desc id="dmD">SQL, JSON, and time series on one side; vector and graph on the other; one PLOMID platform. A small chain reads model, access, execution, storage.</desc>
 <style>
 .bg{fill:#F7F8F8}
 .ink{fill:#16181B}
 .muted{fill:#5A616B}
+.faint{fill:#8A9099}
 .line{stroke:#9AA1AB}
 .rule{stroke:#DCE0E4}
 .logo{fill:#14161A}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 .motion{}
 @media (prefers-color-scheme: dark){
 .bg{fill:#0D1113}
 .ink{fill:#E7E9EB}
 .muted{fill:#98A1AB}
+.faint{fill:#6E747C}
 .line{stroke:#3A4046}
 .rule{stroke:#212629}
 .logo{fill:#F2F3F4}
@@ -45,6 +48,17 @@
 <path d="M 1478 1386 L 1476 1388 L 1476 1608 L 1485 1610 L 1518 1609 L 1518 1387 Z"/>
 <path d="M 1597 1387 L 1598 1429 L 1781 1429 L 1802 1451 L 1802 1545 L 1780 1568 L 1641 1568 L 1639 1566 L 1639 1462 L 1597 1462 L 1598 1609 L 1797 1609 L 1844 1562 L 1845 1436 L 1797 1386 Z"/>
 </g></g>
+<!-- endpoint markers -->
+<g fill="none" class="line" stroke-width="1.5">
+<circle cx="330" cy="128" r="3"/>
+<circle cx="330" cy="170" r="3"/>
+<circle cx="330" cy="212" r="3"/>
+<circle cx="550" cy="128" r="3"/>
+<circle cx="550" cy="170" r="3"/>
+<circle cx="550" cy="212" r="3"/>
+<circle cx="405.7" cy="170" r="3"/>
+<circle cx="474.3" cy="170" r="3"/>
+</g>
 <!-- one-time initialization: each connection draws toward PLOMID, then the system is static. -->
 <line class="motion" x1="330" y1="170" x2="330" y2="170" stroke="#0A7EA4" stroke-width="2" opacity="0"><animate attributeName="x2" values="330;405.7" dur="0.9s" begin="0.5s" fill="freeze"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.2;0.7;1" dur="0.9s" begin="0.5s" fill="freeze"/></line>
 <line class="motion" x1="550" y1="170" x2="550" y2="170" stroke="#0A7EA4" stroke-width="2" opacity="0"><animate attributeName="x2" values="550;474.3" dur="0.9s" begin="1.1s" fill="freeze"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.2;0.7;1" dur="0.9s" begin="1.1s" fill="freeze"/></line>
@@ -59,5 +73,25 @@
 <line x1="550" y1="128" x2="568" y2="128"/>
 <line x1="550" y1="212" x2="568" y2="212"/>
 </g>
+<!-- model → access → execution → storage -->
+<line x1="700" y1="112" x2="700" y2="226" class="rule" stroke-dasharray="3 5"/>
+<g class="line bg" stroke-width="1.5">
+<circle cx="700" cy="112" r="3"/>
+<circle cx="700" cy="150" r="3"/>
+<circle cx="700" cy="188" r="3"/>
+<circle cx="700" cy="226" r="3"/>
+</g>
+<g font-size="8.5" class="mono muted">
+<text x="714" y="116">MODEL</text>
+<text x="714" y="154">ACCESS</text>
+<text x="714" y="192">EXECUTION</text>
+<text x="714" y="230">STORAGE</text>
+</g>
+<!-- one accent signal travels the chain once, after the connection initialization. -->
+<line class="motion" x1="700" y1="112" x2="700" y2="138" stroke="#0A7EA4" stroke-width="2" opacity="0">
+<animate attributeName="y1" values="112;200" dur="1.2s" begin="1.6s" fill="freeze"/>
+<animate attributeName="y2" values="138;226" dur="1.2s" begin="1.6s" fill="freeze"/>
+<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.8;1" dur="1.2s" begin="1.6s" fill="freeze"/>
+</line>
 <text x="440" y="302" text-anchor="middle" font-size="11" letter-spacing="3" class="muted">DIFFERENT MODELS — ONE PLATFORM</text>
 </svg>

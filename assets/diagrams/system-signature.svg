@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="360" viewBox="0 0 880 360" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="sgT sgD">
+<title id="sgT">PLOMID system signature</title>
+<desc id="sgD">A closing signature listing the data models and the system layers. One thin signal descends the centre once, then the signature is static.</desc>
+<style>
+.bg{fill:#F7F8F8}
+.ink{fill:#16181B}
+.muted{fill:#5A616B}
+.faint{fill:#8A9099}
+.rule{stroke:#DCE0E4}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.motion{}
+@media (prefers-color-scheme: dark){
+.bg{fill:#0D1113}
+.ink{fill:#E7E9EB}
+.muted{fill:#98A1AB}
+.faint{fill:#6E747C}
+.rule{stroke:#212629}
+}
+@media (prefers-reduced-motion: reduce){.motion{display:none}}
+</style>
+<rect width="880" height="360" class="bg"/>
+<text x="440" y="80" text-anchor="middle" font-size="12" font-weight="600" letter-spacing="4" class="ink">PLOMID / DATA INFRASTRUCTURE</text>
+<line x1="200" y1="96" x2="680" y2="96" class="rule"/>
+<text x="300" y="124" font-size="9" letter-spacing="2" class="mono muted">MODELS</text>
+<text x="580" y="124" font-size="9" letter-spacing="2" class="mono muted">SYSTEM</text>
+<g font-size="13" font-weight="600" letter-spacing="1.5" class="ink">
+<text x="300" y="156">SQL</text>
+<text x="300" y="188">JSON</text>
+<text x="300" y="220">TIME SERIES</text>
+<text x="300" y="252">VECTOR</text>
+<text x="300" y="284">GRAPH</text>
+<text x="580" y="156">QUERY</text>
+<text x="580" y="188">TRANSACTION</text>
+<text x="580" y="220">STORAGE</text>
+<text x="580" y="252">PERSISTENCE</text>
+</g>
+<!-- one thin signal descends the centre once. -->
+<line x1="440" y1="112" x2="440" y2="300" class="rule" stroke-dasharray="3 5"/>
+<line class="motion" x1="440" y1="112" x2="440" y2="146" stroke="#0A7EA4" stroke-width="2" opacity="0">
+<animate attributeName="y1" values="112;266" dur="2.4s" begin="0.5s" fill="freeze"/>
+<animate attributeName="y2" values="146;300" dur="2.4s" begin="0.5s" fill="freeze"/>
+<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.06;0.9;1" dur="2.4s" begin="0.5s" fill="freeze"/>
+</line>
+<text x="440" y="336" text-anchor="middle" font-size="10" letter-spacing="2" class="faint">UNIFIED DATA INFRASTRUCTURE</text>
+</svg>

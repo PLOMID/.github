@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="540" viewBox="0 0 880 540" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="pgT pgD">
+<title id="pgT">Storage page layout</title>
+<desc id="pgD">A fixed-size 16 KiB storage page: a 48-byte header, a payload data region, and a 4-byte CRC32C trailer. A single scan passes through the data region once.</desc>
+<style>
+.bg{fill:#F7F8F8}
+.panel{fill:#EEF1F2}
+.ink{fill:#16181B}
+.muted{fill:#5A616B}
+.faint{fill:#8A9099}
+.line{stroke:#9AA1AB}
+.rule{stroke:#DCE0E4}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.blue{fill:#0A7EA4}
+.green{fill:#3FAE78}
+.violet{fill:#7567A8}
+.motion{}
+@media (prefers-color-scheme: dark){
+.bg{fill:#0D1113}
+.panel{fill:#15181B}
+.ink{fill:#E7E9EB}
+.muted{fill:#98A1AB}
+.faint{fill:#6E747C}
+.line{stroke:#3A4046}
+.rule{stroke:#212629}
+.blue{fill:#2E9BC0}
+.green{fill:#4FBE88}
+.violet{fill:#8B7DBE}
+}
+@media (prefers-reduced-motion: reduce){.motion{display:none}}
+</style>
+<rect width="880" height="540" class="bg"/>
+<text x="48" y="44" font-size="11" letter-spacing="3.5" class="muted">STORAGE PAGE</text>
+<text x="832" y="44" font-size="10" text-anchor="end" class="mono faint">16 KiB · fixed size</text>
+<line x1="48" y1="58" x2="832" y2="58" class="rule"/>
+<!-- page body -->
+<rect x="170" y="92" width="540" height="392" fill="none" class="line"/>
+<rect x="170" y="92" width="540" height="64" class="panel"/>
+<line x1="170" y1="156" x2="710" y2="156" class="rule"/>
+<line x1="170" y1="430" x2="710" y2="430" class="rule"/>
+<!-- header -->
+<text x="186" y="118" font-size="11" font-weight="600" letter-spacing="2" class="ink">PAGE HEADER</text>
+<text x="694" y="118" font-size="9" text-anchor="end" class="mono faint">48 B</text>
+<text x="186" y="136" font-size="8.5" class="mono faint">magic  format_version  page_type  page_id</text>
+<text x="186" y="148" font-size="8.5" class="mono faint">generation_id  lsn  payload_length  flags  checksum</text>
+<!-- data region -->
+<text x="186" y="182" font-size="11" font-weight="600" letter-spacing="2" class="ink">DATA REGION</text>
+<text x="694" y="182" font-size="9" text-anchor="end" class="mono faint">16 332 B</text>
+<g class="rule" stroke-width="1">
+<line x1="216" y1="226" x2="694" y2="226"/>
+<line x1="216" y1="272" x2="694" y2="272"/>
+<line x1="216" y1="318" x2="694" y2="318"/>
+<line x1="216" y1="364" x2="694" y2="364"/>
+</g>
+<g font-size="9" class="mono faint" text-anchor="middle">
+<text x="201" y="229">01</text>
+<text x="201" y="275">02</text>
+<text x="201" y="321">03</text>
+<text x="201" y="367">04</text>
+</g>
+<!-- one scan passes through the data region, then the page is static. -->
+<defs>
+<linearGradient id="pgScan" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#0A7EA4" stop-opacity="0"/>
+<stop offset="0.5" stop-color="#0A7EA4" stop-opacity="0.85"/>
+<stop offset="1" stop-color="#0A7EA4" stop-opacity="0"/>
+</linearGradient>
+</defs>
+<rect class="motion" x="172" y="160" width="536" height="10" fill="url(#pgScan)" opacity="0">
+<animate attributeName="y" values="160;416" dur="2.6s" begin="0.6s" fill="freeze"/>
+<animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.06;0.2;0.82;0.94;1" dur="2.6s" begin="0.6s" fill="freeze"/>
+</rect>
+<!-- trailer -->
+<text x="186" y="462" font-size="11" font-weight="600" letter-spacing="2" class="ink">TRAILER</text>
+<text x="694" y="462" font-size="9" text-anchor="end" class="mono green">CRC32C · 4 B</text>
+<!-- byte offsets -->
+<g font-size="9" class="mono faint" text-anchor="end">
+<text x="150" y="118">0x0000</text>
+<text x="150" y="182">0x0030</text>
+<text x="150" y="462">0x3FFC</text>
+</g>
+<!-- region state markers -->
+<rect x="730" y="113" width="6" height="6" class="violet"/>
+<text x="742" y="119" font-size="9" class="mono muted">metadata</text>
+<rect x="730" y="176" width="6" height="6" class="blue"/>
+<text x="742" y="182" font-size="9" class="mono muted">payload</text>
+<rect x="730" y="451" width="6" height="6" class="green"/>
+<text x="742" y="457" font-size="9" class="mono muted">integrity</text>
+<text x="440" y="512" text-anchor="middle" font-size="10" class="faint">checksum-protected pages — header checksum plus full-page trailer</text>
+</svg>

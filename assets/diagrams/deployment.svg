@@ -1,8 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="880" height="380" viewBox="0 0 880 380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="dpT dpD">
-<title id="dpT">Deployment topology</title><desc id="dpD">One PLOMID platform fanning out to cloud, on-premises, and edge environments.</desc>
+<title id="dpT">Deployment topology</title>
+<desc id="dpD">One PLOMID platform fanning out to cloud, on-premises, edge, and controlled environments. A single signal travels out to each environment in turn.</desc>
 <style>
-.bg{fill:#F7F8F8}.ink{fill:#1a1a1a}.muted{fill:#5c5c5c}.line{stroke:#b9b9b9}.rule{stroke:#d9d9d9}.logo{fill:#111}.motion{}
-@media (prefers-color-scheme: dark){.bg{fill:#0D1113}.ink{fill:#e9e9e9}.muted{fill:#9a9a9a}.line{stroke:#3d4144}.rule{stroke:#26292c}.logo{fill:#f2f2f2}}
+.bg{fill:#F7F8F8}
+.ink{fill:#16181B}
+.muted{fill:#5A616B}
+.faint{fill:#8A9099}
+.line{stroke:#9AA1AB}
+.rule{stroke:#DCE0E4}
+.logo{fill:#14161A}
+.blue{fill:#0A7EA4}
+.amber{fill:#C58A32}
+.violet{fill:#7567A8}
+.motion{}
+@media (prefers-color-scheme: dark){
+.bg{fill:#0D1113}
+.ink{fill:#E7E9EB}
+.muted{fill:#98A1AB}
+.faint{fill:#6E747C}
+.line{stroke:#3A4046}
+.rule{stroke:#212629}
+.logo{fill:#F2F3F4}
+.blue{fill:#2E9BC0}
+.amber{fill:#D69A42}
+.violet{fill:#8B7DBE}
+}
 @media (prefers-reduced-motion: reduce){.motion{display:none}}
 </style>
 <rect width="880" height="380" class="bg"/>
@@ -21,35 +43,45 @@
 </g></g>
 <!-- branches -->
 <g fill="none" class="line" stroke-width="1.5">
-<path id="br1" d="M396 168 C 340 210, 280 230, 220 244"/>
-<path id="br2" d="M440 192 V244"/>
-<path id="br3" d="M484 168 C 540 210, 600 230, 660 244"/>
+<path id="br1" d="M398 166 C 330 205, 240 228, 150 250"/>
+<path id="br2" d="M420 190 C 400 212, 370 232, 340 250"/>
+<path id="br3" d="M460 190 C 480 212, 510 232, 530 250"/>
+<path id="br4" d="M482 166 C 550 205, 640 228, 720 250"/>
 </g>
-<g fill="#0A7EA4"><circle cx="220" cy="244" r="3.5"/><circle cx="440" cy="244" r="3.5"/><circle cx="660" cy="244" r="3.5"/></g>
+<rect x="146" y="246" width="8" height="8" class="blue"/>
+<rect x="336" y="246" width="8" height="8" class="faint"/>
+<rect x="526" y="246" width="8" height="8" class="amber"/>
+<rect x="716" y="246" width="8" height="8" class="violet"/>
 <!-- one signal travels outward from PLOMID to each environment, once. -->
 <g class="motion" fill="#0A7EA4">
 <rect x="-9" y="-1.5" width="18" height="3" rx="1.5" opacity="0">
-<animateMotion dur="1.1s" begin="0.5s" fill="freeze" rotate="auto" path="M396 168 C 340 210, 280 230, 220 244"/>
+<animateMotion dur="1.1s" begin="0.5s" fill="freeze" rotate="auto" path="M398 166 C 330 205, 240 228, 150 250"/>
 <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.75;1" dur="1.1s" begin="0.5s" fill="freeze"/>
 </rect>
 <rect x="-9" y="-1.5" width="18" height="3" rx="1.5" opacity="0">
-<animateMotion dur="0.7s" begin="1.7s" fill="freeze" rotate="auto" path="M440 192 V244"/>
+<animateMotion dur="0.7s" begin="1.7s" fill="freeze" rotate="auto" path="M420 190 C 400 212, 370 232, 340 250"/>
 <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.75;1" dur="0.7s" begin="1.7s" fill="freeze"/>
 </rect>
 <rect x="-9" y="-1.5" width="18" height="3" rx="1.5" opacity="0">
-<animateMotion dur="1.1s" begin="2.5s" fill="freeze" rotate="auto" path="M484 168 C 540 210, 600 230, 660 244"/>
-<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.75;1" dur="1.1s" begin="2.5s" fill="freeze"/>
+<animateMotion dur="0.7s" begin="2.5s" fill="freeze" rotate="auto" path="M460 190 C 480 212, 510 232, 530 250"/>
+<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.75;1" dur="0.7s" begin="2.5s" fill="freeze"/>
+</rect>
+<rect x="-9" y="-1.5" width="18" height="3" rx="1.5" opacity="0">
+<animateMotion dur="1.1s" begin="3.3s" fill="freeze" rotate="auto" path="M482 166 C 550 205, 640 228, 720 250"/>
+<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.75;1" dur="1.1s" begin="3.3s" fill="freeze"/>
 </rect>
 </g>
 <g font-size="14" class="ink" text-anchor="middle">
-<text x="220" y="270">CLOUD</text>
-<text x="440" y="270">ON-PREM</text>
-<text x="660" y="270">EDGE</text>
+<text x="150" y="276">CLOUD</text>
+<text x="340" y="276">ON-PREM</text>
+<text x="530" y="276">EDGE</text>
+<text x="720" y="276">CONTROLLED</text>
 </g>
 <g font-size="10" class="muted" text-anchor="middle">
-<text x="220" y="290">elastic capacity</text>
-<text x="440" y="290">controlled systems</text>
-<text x="660" y="290">close to data</text>
+<text x="150" y="294">elastic capacity</text>
+<text x="340" y="294">private systems</text>
+<text x="530" y="294">close to data</text>
+<text x="720" y="294">isolated placement</text>
 </g>
 <text x="440" y="348" text-anchor="middle" font-size="11" letter-spacing="3" class="muted">ONE PLATFORM — DATA WHERE IT BELONGS</text>
 </svg>

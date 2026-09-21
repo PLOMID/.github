@@ -15,7 +15,7 @@
 <p>PLOMID is building a unified data layer for SQL, JSON, time-series, vector, graph, and distributed workloads.</p>
 <p><sub>PLOMID — Platform for Modern Intelligence and Data</sub></p>
 
-[Foundation](#01-foundation) · [Architecture](#03-architecture) · [Source](https://github.com/PLOMID/plomid) · [Issues](https://github.com/PLOMID/plomid/issues)
+[Foundation](#01-foundation) · [Architecture](#03-architecture) · [Storage](#04-storage) · [System map](#system-map) · [Source](https://github.com/PLOMID/plomid) · [Issues](https://github.com/PLOMID/plomid/issues)
 
 ![Applications, data workloads, PLOMID, common data layer, data infrastructure](../assets/diagrams/hero-data-infrastructure.svg)
 
@@ -41,7 +41,7 @@ PLOMID explores a unified architecture where these workloads share a common unde
 
 </div>
 
-PLOMID brings SQL, JSON, time-series, vector, graph, and distributed data workloads toward a common data infrastructure.
+PLOMID brings SQL, JSON, time-series, vector, and graph workloads toward a common data infrastructure.
 
 ### One data layer
 
@@ -55,7 +55,7 @@ Instead of treating every data model as an isolated system, PLOMID is designed a
 
 <div align="center">
 
-![Data access, PLOMID core, storage foundation](../assets/diagrams/data-flow.svg)
+![Client, PostgreSQL wire, data access, PLOMID core, storage foundation](../assets/diagrams/data-flow.svg)
 
 </div>
 
@@ -83,6 +83,18 @@ PLOMID is approached from the underlying data infrastructure upward: durable pag
 
 </div>
 
+### Pages and persistence
+
+PLOMID stores data in fixed-size 16 KiB pages, each protected by a 48-byte header and a 4-byte CRC32C trailer. Writes move through the buffer pool into pages and blocks, then on to persistence.
+
+<div align="center">
+
+![Fixed-size storage page: header, data region, checksum trailer](../assets/diagrams/storage-page.svg)
+
+![Storage write path: request, buffer, page, block, persistence](../assets/diagrams/storage-flow.svg)
+
+</div>
+
 ## 05 Engineering
 
 ### Engineered as infrastructure.
@@ -93,11 +105,31 @@ PLOMID is engineered in Rust around the concerns of a storage-backed data system
 
 The emphasis is on correctness at the foundation — durability, transactional behavior, and clean layering — so that higher-level data models rest on infrastructure that is easy to reason about.
 
+### Transactions and MVCC
+
+PLOMID implements a transaction lifecycle — active, committed, aborted — over multi-version concurrency control. Row versions resolve by snapshot visibility, and committed data becomes durable.
+
+<div align="center">
+
+![Transaction lifecycle and MVCC row versions](../assets/diagrams/transaction.svg)
+
+</div>
+
+### Implementation
+
+**RUST** — type-safe systems programming. `unsafe` is forbidden workspace-wide.
+
 ## 06 Access
 
 ### Data access
 
 Different workloads require different access structures. The architecture distinguishes point lookups, ordered range access, and set filtering as separate access paths over shared stored data. Each structure serves its access pattern; the stored data beneath them remains part of the same foundation.
+
+<div align="center">
+
+![Access structures: B+tree, filters, and columnar pruning](../assets/diagrams/access-paths.svg)
+
+</div>
 
 ## 07 Runtime
 
@@ -105,9 +137,9 @@ Different workloads require different access structures. The architecture distin
 
 <div align="center">
 
-![Illustrative boot sequence — see screenshot below for real server output](../assets/diagrams/terminal-boot.svg)
-
-<img src="../assets/terminal.png" alt="PLOMID server boot — storage engine, write-ahead log, query executor, network listener" width="800">
+<img src="../assets/diagrams/terminal-frame.svg" alt="PLOMID server" width="800"><br>
+<img src="../assets/terminal.png" alt="PLOMID server boot — storage engine, write-ahead log, query executor, network listener" width="800"><br>
+<img src="../assets/diagrams/terminal-base.svg" alt="Real server output" width="800">
 
 <sub>PLOMID is built from the systems layer upward, with the development environment and runtime exposed directly through the command line.</sub>
 
@@ -121,13 +153,19 @@ PLOMID is intended as infrastructure that deploys according to application and d
 
 <div align="center">
 
-![PLOMID deployed across cloud, on-premises, and edge](../assets/diagrams/deployment.svg)
+![PLOMID deployed across cloud, on-premises, edge, and controlled environments](../assets/diagrams/deployment.svg)
 
 </div>
 
 The design centers on flexible deployment and data placement — spanning deployment, residency, replication, access, and storage — giving infrastructure teams a foundation that can operate across cloud, on-premises, edge, and controlled environments.
 
 <sub>DATA PLACEMENT · RESIDENCY · REPLICATION · ACCESS · JURISDICTION · STORAGE</sub>
+
+<div align="center">
+
+![Data placement control plane: location, residency, replication, access, storage, jurisdiction](../assets/diagrams/placement.svg)
+
+</div>
 
 ## 09 Open engineering
 
@@ -138,11 +176,13 @@ The engineering work behind PLOMID lives in this organization:
 - [Source](https://github.com/PLOMID/plomid) — the PLOMID implementation.
 - [Issues](https://github.com/PLOMID/plomid/issues) — engineering discussion.
 
-## System map
+
+
+## System reference
 
 <div align="center">
 
-![PLOMID system map: applications, workloads, core, transactions, execution, access, storage foundation](../assets/diagrams/system-map.svg)
+![System layers and diagram legend](../assets/diagrams/system-reference.svg)
 
 </div>
 
@@ -154,8 +194,9 @@ The engineering work behind PLOMID lives in this organization:
 
 <div align="center">
 
+![PLOMID system signature](../assets/diagrams/system-signature.svg)
+
 PLOMID
 <br><sub>Platform for Modern Intelligence and Data</sub>
-<br><br><sub>Unified data infrastructure for modern applications.</sub>
 
 </div>
