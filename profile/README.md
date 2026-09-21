@@ -5,17 +5,17 @@
   <source media="(prefers-color-scheme: light)" srcset="../assets/logo_BLACK.png">
   <img src="../assets/logo_BLACK.png" alt="PLOMID" width="220">
 </picture>
-
+<br><sub>Platform for Modern Intelligence and Data</sub>
 <p><sub>DATA INFRASTRUCTURE</sub></p>
 
 # PLOMID
 
 ## Unified data infrastructure for modern applications.
 
-<p>PLOMID is building a unified data layer for SQL, JSON, time-series, vector, graph, and distributed workloads.</p>
-<p><sub>PLOMID — Platform for Modern Intelligence and Data</sub></p>
+<p>PLOMID, a unified data layer for SQL, JSON, time-series, vector, graph, and distributed workloads.</p>
 
-[Foundation](#01-foundation) · [Architecture](#03-architecture) · [Storage](#04-storage) · [System map](#system-map) · [Source](https://github.com/PLOMID/plomid) · [Issues](https://github.com/PLOMID/plomid/issues)
+
+[Foundation](#01-foundation) · [Architecture](#03-architecture) · [Storage](#04-storage) · [Source](https://github.com/PLOMID/plomid) · [Issues](https://github.com/PLOMID/plomid/issues)
 
 ![Applications, data workloads, PLOMID, common data layer, data infrastructure](../assets/diagrams/hero-data-infrastructure.svg)
 
@@ -114,10 +114,6 @@ PLOMID implements a transaction lifecycle — active, committed, aborted — ove
 ![Transaction lifecycle and MVCC row versions](../assets/diagrams/transaction.svg)
 
 </div>
-
-### Implementation
-
-**RUST** — type-safe systems programming. `unsafe` is forbidden workspace-wide.
 
 ## 06 Access
 
